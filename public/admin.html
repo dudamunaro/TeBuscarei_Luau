@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#a85b1b">
+    <title>Admin | Luau — Te Buscarei</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="luau.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-page">
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Luau — início">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <span>LU<em>AU</em></span>
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="index.html">Início</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <section class="login-card" aria-labelledby="loginTitle">
+            <span class="login-star" aria-hidden="true">✦</span>
+            <p class="eyebrow">Área restrita</p>
+            <h1 id="loginTitle">Acesso administrativo</h1>
+            <p class="login-description">Entre com suas credenciais para acessar o painel do evento.</p>
+
+            <form id="loginForm">
+                <div class="field">
+                    <label for="user">Usuário</label>
+                    <input id="user" name="usuario" type="text" autocomplete="username" required>
+                </div>
+                <div class="field">
+                    <label for="pass">Senha</label>
+                    <input id="pass" name="senha" type="password" autocomplete="current-password" required>
+                </div>
+                <p id="loginStatus" class="login-status" role="status" aria-live="polite"></p>
+                <button class="login-button" type="submit">Entrar no painel <span aria-hidden="true">→</span></button>
+            </form>
+
+            <a class="back-link" href="index.html">Voltar ao site</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span class="footer-star" aria-hidden="true">✦</span>
+        <p>Luau · Te Buscarei</p>
+    </footer>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const loginStatus = document.getElementById("loginStatus");
+        const loginButton = loginForm.querySelector("button");
+
+        loginForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            loginStatus.textContent = "";
+            loginStatus.className = "login-status";
+            loginButton.disabled = true;
+            loginButton.textContent = "Verificando...";
+
+            const formData = new FormData(loginForm);
+            const credentials = {
+                usuario: String(formData.get("usuario")).trim(),
+                senha: String(formData.get("senha"))
+            };
+
+            try {
+                const response = await fetch("/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(credentials)
+                });
+
+                const result = await response.json();
+                if (!response.ok) {
+                    loginStatus.textContent = result.mensagem || "Não foi possível validar o acesso. Tente novamente.";
+                    loginStatus.classList.add("error");
+                    return;
+                }
+
+                window.location.href = "/dashboard";
+            } catch {
+                loginStatus.textContent = "Não foi possível conectar ao servidor. Verifique a conexão e tente novamente.";
+                loginStatus.classList.add("error");
+            } finally {
+                loginButton.disabled = false;
+                loginButton.innerHTML = 'Entrar no painel <span aria-hidden="true">→</span>';
+            }
+        });
+    </script>
+</body>
+
+</html>

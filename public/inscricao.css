@@ -1,0 +1,358 @@
+.registration-page {
+    background: var(--paper);
+}
+
+.registration-hero {
+    padding: 142px 24px 75px;
+    background:
+        radial-gradient(ellipse at 75% 35%, rgba(255, 236, 201, 0.92), transparent 49%),
+        linear-gradient(112deg, #a9581e 0%, #c77b36 45%, #e6bd83 100%);
+    color: #fff8eb;
+    text-align: center;
+}
+
+.registration-hero .eyebrow {
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.registration-hero h1 {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.registration-hero > p:not(.eyebrow) {
+    margin: 15px auto 0;
+    color: rgba(255, 248, 235, 0.88);
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.registration-summary {
+    display: grid;
+    max-width: 930px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 38px auto 0;
+    border: 1px solid rgba(255, 248, 235, 0.35);
+    background: rgba(94, 48, 20, 0.13);
+}
+
+.registration-summary > div {
+    display: grid;
+    gap: 8px;
+    padding: 18px 20px;
+}
+
+.registration-summary > div + div {
+    border-left: 1px solid rgba(255, 248, 235, 0.3);
+}
+
+.registration-summary .confraternization-summary-item {
+    display: none;
+}
+
+.registration-summary span {
+    color: rgba(255, 248, 235, 0.75);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.registration-summary strong {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.confraternization-card {
+    width: min(100%, 700px);
+    margin: 18px auto 0;
+    padding: 18px 24px;
+    border: 1px solid rgba(255, 248, 235, 0.35);
+    background: rgba(94, 48, 20, 0.13);
+    text-align: center;
+}
+
+.confraternization-label {
+    margin: 0 0 6px;
+    color: rgba(255, 248, 235, 0.75);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.confraternization-card h2 {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 600;
+}
+
+.confraternization-date {
+    margin: 7px 0 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.confraternization-location {
+    margin: 5px 0 0;
+    color: rgba(255, 248, 235, 0.82);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.registration-content {
+    padding: 0 20px 90px;
+    background:
+        radial-gradient(ellipse at 50% 0, rgba(226, 190, 132, 0.13), transparent 55%),
+        var(--paper);
+}
+
+.registration-panel {
+    width: min(100%, 820px);
+    margin: -32px auto 0;
+    padding: clamp(26px, 5vw, 48px);
+    border: 1px solid var(--line);
+    background: #fffdf8;
+    box-shadow: 0 18px 55px rgba(67, 37, 17, 0.1);
+}
+
+.registration-heading {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.registration-heading .eyebrow {
+    justify-content: center;
+    margin-bottom: 10px;
+    color: var(--amber);
+}
+
+.registration-heading h2 {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(29px, 4vw, 38px);
+    font-weight: 500;
+}
+
+.registration-heading > p:last-child {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+#registrationForm {
+    display: grid;
+    gap: 22px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-field {
+    display: grid;
+    gap: 8px;
+}
+
+.form-field[hidden] {
+    display: none;
+}
+
+.form-field-wide {
+    grid-column: 1 / -1;
+}
+
+.guardian-fields {
+    min-width: 0;
+    margin: 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+}
+
+.guardian-fields[hidden] {
+    display: none;
+}
+
+.guardian-fields legend {
+    padding: 0 8px;
+    color: var(--amber);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.form-field label {
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid rgba(112, 70, 32, 0.25);
+    border-radius: 3px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+}
+
+.form-field textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--amber);
+    outline: 3px solid rgba(187, 112, 45, 0.16);
+}
+
+.form-field input[type="tel"] {
+    letter-spacing: 0.3px;
+}
+
+.privacy-note {
+    margin: -4px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.submit-button {
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 0;
+    border-radius: 3px;
+    background: #9c571f;
+    color: #fff8eb;
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.submit-button:hover:not(:disabled),
+.submit-button:focus-visible {
+    transform: translateY(-1px);
+    background: #754018;
+}
+
+.submit-button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.form-message {
+    display: none;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.form-message.success,
+.form-message.error {
+    display: block;
+}
+
+.form-message.success {
+    border-color: #9cc9a5;
+    background: #eff8f0;
+    color: #285d34;
+}
+
+.form-message.error {
+    border-color: #e2a0a0;
+    background: #fff0ef;
+    color: #8a1f1f;
+}
+
+.back-link {
+    display: block;
+    width: fit-content;
+    margin: 22px auto 0;
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+    color: var(--amber);
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .registration-hero {
+        padding: 126px 20px 64px;
+    }
+
+    .registration-summary {
+        grid-template-columns: 1fr;
+        margin-top: 28px;
+    }
+
+    .registration-summary .confraternization-summary-item {
+        display: grid;
+    }
+
+    .confraternization-card {
+        display: none;
+    }
+
+    .registration-summary > div {
+        padding: 13px 15px;
+    }
+
+    .registration-summary > div + div {
+        border-top: 1px solid rgba(255, 248, 235, 0.3);
+        border-left: 0;
+    }
+
+    .registration-summary strong {
+        font-size: 16px;
+    }
+
+    .registration-panel {
+        margin-top: -26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-field-wide {
+        grid-column: auto;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .submit-button {
+        transition-duration: 0.01ms;
+    }
+}

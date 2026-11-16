@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#a85b1b">
+    <meta name="description" content="Inscreva-se no 18º Luau — Te Buscarei, em 12 de dezembro de 2026, com confraternização do grupo no dia 13.">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Inscrição | 18º Luau — Te Buscarei</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="luau.css">
+    <link rel="stylesheet" href="inscricao.css">
+</head>
+
+<body class="registration-page">
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="18º Luau — início">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <span>18ºLU<em>AU</em></span>
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="index.html">Início</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="registration-hero">
+            <p class="eyebrow"><span></span> Te Buscarei <span></span></p>
+            <h1>Faça sua inscrição</h1>
+            <p>Esperamos você para viver uma noite especial de fé e comunhão.</p>
+
+            <div class="registration-summary">
+                <div>
+                    <span>Quando</span>
+                    <strong>12 de dezembro de 2026</strong>
+                </div>
+                <div>
+                    <span>Onde</span>
+                    <strong>Salão Nossa Senhora Aparecida</strong>
+                </div>
+                <div>
+                    <span>Entrada</span>
+                    <strong>R$ 10,00</strong>
+                </div>
+                <div class="confraternization-summary-item">
+                    <span>Confraternização do grupo</span>
+                    <strong>13 de dezembro de 2026</strong>
+                    <small>Em uma chácara — endereço será informado em breve.</small>
+                </div>
+            </div>
+
+            <aside class="confraternization-card" aria-label="Confraternização do grupo">
+                <p class="confraternization-label">Dia seguinte</p>
+                <h2>Confraternização do grupo</h2>
+                <p class="confraternization-date">13 de dezembro de 2026</p>
+                <p class="confraternization-location">Em uma chácara — endereço será informado em breve.</p>
+            </aside>
+        </section>
+
+        <section class="registration-content">
+            <div class="registration-panel">
+                <div class="registration-heading">
+                    <p class="eyebrow">18º Luau</p>
+                    <h2>Dados do participante</h2>
+                    <p>Preencha os dados abaixo para enviar sua inscrição.</p>
+                </div>
+
+                <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+                <form id="registrationForm">
+                    <div class="form-grid">
+                        <div class="form-field form-field-wide">
+                            <label for="nome">Nome completo</label>
+                            <input id="nome" name="nome" type="text" autocomplete="name" maxlength="120" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="idade">Idade</label>
+                            <input id="idade" name="idade" type="number" min="11" max="120" inputmode="numeric" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="telefoneParticipante">Telefone do participante</label>
+                            <input id="telefoneParticipante" name="telefone_participante" class="phone-input" type="tel" autocomplete="tel" inputmode="tel" placeholder="(18) 99999-9999" maxlength="16" required>
+                        </div>
+                        <fieldset id="guardianFields" class="guardian-fields form-field-wide" hidden>
+                            <legend>Dados do responsável (menores de 18 anos)</legend>
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label for="nomeResponsavel">Nome do responsável</label>
+                                    <input id="nomeResponsavel" name="nome_responsavel" type="text" autocomplete="name" maxlength="120">
+                                </div>
+                                <div class="form-field">
+                                    <label for="telefoneResponsavel">Número do responsável</label>
+                                    <input id="telefoneResponsavel" name="telefone_responsavel" class="phone-input" type="tel" autocomplete="tel" inputmode="tel" placeholder="(18) 99999-9999" maxlength="16">
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-field">
+                            <label for="jaFezRetiro">Já fez algum retiro?</label>
+                            <select id="jaFezRetiro" name="ja_fez_retiro" required>
+                                <option value="">Selecione</option>
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
+                            </select>
+                        </div>
+                        <div id="qualRetiroField" class="form-field form-field-wide" hidden>
+                            <label for="qualRetiro">Se sim, qual?</label>
+                            <input id="qualRetiro" name="qual_retiro" type="text" maxlength="200">
+                        </div>
+                        <div class="form-field form-field-wide">
+                            <label for="restricaoSaude">Possui alguma restrição de saúde?</label>
+                            <textarea id="restricaoSaude" name="restricao_saude" rows="4" required></textarea>
+                        </div>
+                        <div class="form-field form-field-wide">
+                            <label for="medicacao">Faz uso de medicação contínua?</label>
+                            <textarea id="medicacao" name="medicacao" rows="4" required></textarea>
+                        </div>
+                    </div>
+
+                    <p class="privacy-note">Preencha todos os campos obrigatórios para enviar a inscrição.</p>
+                    <button class="submit-button" type="submit">Enviar inscrição </button>
+                </form>
+
+                <a class="back-link" href="index.html">Voltar para o site</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span class="footer-star" aria-hidden="true">✦</span>
+        <p>18º Luau · Te Buscarei</p>
+        <p class="footer-date">12 de dezembro de 2026</p>
+    </footer>
+
+    <script src="inscricao.js"></script>
+</body>
+
+</html>
