@@ -111,8 +111,7 @@ form.addEventListener("submit", async (event) => {
         telefone_participante: String(formData.get("telefone_participante")).trim(),
         ja_fez_retiro: String(formData.get("ja_fez_retiro")),
         qual_retiro: String(formData.get("qual_retiro") || "").trim(),
-        restricao_saude: String(formData.get("restricao_saude")).trim(),
-        medicacao: String(formData.get("medicacao")).trim()
+        restricao_saude: String(formData.get("restricao_saude")).trim()
     };
 
     submitButton.disabled = true;
