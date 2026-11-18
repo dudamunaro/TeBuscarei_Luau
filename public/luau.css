@@ -288,6 +288,13 @@ a {
     line-height: 1.7;
 }
 
+.section-heading .invitation-reference {
+    color: var(--amber);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 600;
+}
+
 .event-details {
     display: grid;
     max-width: 1000px;
