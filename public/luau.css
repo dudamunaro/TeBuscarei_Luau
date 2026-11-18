@@ -281,6 +281,11 @@ a {
     font-weight: 500;
 }
 
+.section-heading h2.invitation-verse {
+    font-size: clamp(26px, 3.5vw, 36px);
+    line-height: 1.25;
+}
+
 .section-heading > p:last-child {
     margin: 18px 0 0;
     color: var(--muted);
@@ -291,7 +296,7 @@ a {
 .section-heading .invitation-reference {
     color: var(--amber);
     font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(22px, 3vw, 32px);
     font-weight: 600;
 }
 
