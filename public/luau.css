@@ -348,20 +348,17 @@ a {
     line-height: 1.35;
 }
 
+.detail-card h3.detail-time {
+    color: var(--amber);
+    font-size: 30px;
+}
+
 .detail-card > p:last-child {
     margin: 5px 0 0;
     color: var(--muted);
     font-size: 14px;
 }
 
-.detail-card .detail-time {
-    display: block;
-    margin: 8px 0 0;
-    color: var(--amber);
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 24px;
-    line-height: 1.2;
-}
 
 .site-footer {
     padding: 28px 20px 32px;
