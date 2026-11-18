@@ -283,11 +283,7 @@ app.post("/inscricao", async (req, res) => {
     idade,
     nome_responsavel,
     telefone_responsavel,
-    telefone_participante,
-    ja_fez_retiro,
-    qual_retiro,
-    restricao_saude,
-    medicacao
+    telefone_participante
   } = req.body || {};
   const nomeLimpo = String(nome || "").trim().replace(/\s+/g, " ");
   const idadeNumero = Number(idade);
@@ -334,24 +330,16 @@ app.post("/inscricao", async (req, res) => {
         nome_responsavel,
         telefone_responsavel,
         telefone_participante,
-        ja_fez_retiro,
-        qual_retiro,
-        restricao_saude,
-        medicacao,
         status_pagamento
       )
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'pendente')
+      VALUES ($1, $2, $3, $4, $5, 'pendente')
       RETURNING id`,
       [
         nomeLimpo,
         idadeNumero,
         nome_responsavel || null,
         telefone_responsavel || null,
-        telefone_participante || null,
-        ja_fez_retiro || null,
-        qual_retiro || null,
-        restricao_saude || null,
-        medicacao || null
+        telefone_participante || null
       ]
     );
 

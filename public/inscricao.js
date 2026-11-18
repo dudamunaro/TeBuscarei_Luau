@@ -5,9 +5,6 @@ const ageInput = document.getElementById("idade");
 const guardianFields = document.getElementById("guardianFields");
 const guardianName = document.getElementById("nomeResponsavel");
 const guardianPhone = document.getElementById("telefoneResponsavel");
-const retreatSelect = document.getElementById("jaFezRetiro");
-const retreatField = document.getElementById("qualRetiroField");
-const retreatName = document.getElementById("qualRetiro");
 
 function formatPhone(value) {
     const digits = value.replace(/\D/g, "").slice(0, 11);
@@ -77,20 +74,6 @@ ageInput.addEventListener("invalid", () => {
 
 updateGuardianFields();
 
-function updateRetreatField() {
-    const hasRetreated = retreatSelect.value === "Sim";
-
-    retreatField.hidden = !hasRetreated;
-    retreatName.disabled = !hasRetreated;
-
-    if (!hasRetreated) {
-        retreatName.value = "";
-    }
-}
-
-retreatSelect.addEventListener("change", updateRetreatField);
-updateRetreatField();
-
 function showMessage(text, type) {
     message.textContent = text;
     message.className = `form-message ${type}`;
@@ -108,10 +91,7 @@ form.addEventListener("submit", async (event) => {
         idade: String(formData.get("idade")),
         nome_responsavel: String(formData.get("nome_responsavel") || "").trim() || null,
         telefone_responsavel: String(formData.get("telefone_responsavel") || "").trim() || null,
-        telefone_participante: String(formData.get("telefone_participante")).trim(),
-        ja_fez_retiro: String(formData.get("ja_fez_retiro")),
-        qual_retiro: String(formData.get("qual_retiro") || "").trim(),
-        restricao_saude: String(formData.get("restricao_saude")).trim()
+        telefone_participante: String(formData.get("telefone_participante")).trim()
     };
 
     submitButton.disabled = true;
@@ -140,7 +120,6 @@ form.addEventListener("submit", async (event) => {
         showMessage(result.mensagem || "Inscrição enviada com sucesso!", "success");
         form.reset();
         updateGuardianFields();
-        updateRetreatField();
         window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
         showMessage("Não foi possível conectar ao servidor. Verifique a conexão e tente novamente.", "error");

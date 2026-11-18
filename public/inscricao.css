@@ -34,7 +34,7 @@
 .registration-summary {
     display: grid;
     max-width: 930px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     margin: 38px auto 0;
     border: 1px solid rgba(255, 248, 235, 0.35);
     background: rgba(94, 48, 20, 0.13);

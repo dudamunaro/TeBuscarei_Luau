@@ -91,11 +91,7 @@
                             ["Idade", pessoa.idade],
                             ["Telefone", pessoa.telefone_participante],
                             ["Responsável", pessoa.nome_responsavel],
-                            ["Telefone do responsável", pessoa.telefone_responsavel],
-                            ["Já fez retiro", pessoa.ja_fez_retiro],
-                            ["Qual retiro", pessoa.qual_retiro],
-                            ["Restrição", pessoa.restricao_saude],
-                            ["Medicação", pessoa.medicacao]
+                            ["Telefone do responsável", pessoa.telefone_responsavel]
                         ];
 
                         campos.forEach(([label, valor]) => {
@@ -169,11 +165,7 @@
                 "Idade",
                 "Nome do responsável",
                 "Telefone do responsável",
-                "Telefone do participante",
-                "Já fez retiro",
-                "Qual retiro",
-                "Restrição de saúde",
-                "Medicação"
+                "Telefone do participante"
             ];
 
             const escaparHtml = (valor) => String(valor || "")
@@ -186,11 +178,7 @@
                 pessoa.idade,
                 pessoa.nome_responsavel,
                 pessoa.telefone_responsavel,
-                pessoa.telefone_participante,
-                pessoa.ja_fez_retiro,
-                pessoa.qual_retiro,
-                pessoa.restricao_saude,
-                pessoa.medicacao
+                pessoa.telefone_participante
             ]);
 
             const html = [
